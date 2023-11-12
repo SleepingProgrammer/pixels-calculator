@@ -1,0 +1,142 @@
+[
+    {
+        "Name": "Java Bean",
+        "Level": "",
+        "Exp": "11.6",
+        "GrowTime": "05:00:00",
+        "EnergyCost": "-2",
+        "Energy Consume": "0.00",
+        "SeedPrice": "1",
+        "SellPrice": "0"
+    },
+    {
+        "Name": "Popberry",
+        "Level": "",
+        "Exp": "3.5",
+        "GrowTime": "00:01:00",
+        "EnergyCost": "-2",
+        "Energy Consume": "0.35",
+        "SeedPrice": "1",
+        "SellPrice": "3"
+    },
+    {
+        "Name": "Shorelime",
+        "Level": "0",
+        "Exp": "3.5",
+        "GrowTime": "00:01:00",
+        "EnergyCost": "-1.5",
+        "Energy Consume": "1.50",
+        "SeedPrice": "0.8",
+        "SellPrice": "8"
+    },
+    {
+        "Name": "Butterberry",
+        "Level": "2",
+        "Exp": "4",
+        "GrowTime": "00:20:00",
+        "EnergyCost": "-2",
+        "Energy Consume": "0.41",
+        "SeedPrice": "1",
+        "SellPrice": "5"
+    },
+    {
+        "Name": "Heartbeet",
+        "Level": "2",
+        "Exp": "4",
+        "GrowTime": "00:08:00",
+        "EnergyCost": "-2",
+        "Energy Consume": "0.35",
+        "SeedPrice": "0",
+        "SellPrice": "5"
+    },
+    {
+        "Name": "Clover",
+        "Level": "3",
+        "Exp": "3.5",
+        "GrowTime": "00:45:00",
+        "EnergyCost": "-3.5",
+        "Energy Consume": "0.36",
+        "SeedPrice": "3",
+        "SellPrice": "6"
+    },
+    {
+        "Name": "4 Leaf Clover",
+        "Level": "3",
+        "Exp": "280",
+        "GrowTime": "00:45:00",
+        "EnergyCost": "-3.5",
+        "Energy Consume": "27.58",
+        "SeedPrice": "3",
+        "SellPrice": "300"
+    },
+    {
+        "Name": "Grainbow",
+        "Level": "5",
+        "Exp": "5.4",
+        "GrowTime": "01:00:00",
+        "EnergyCost": "-2.5",
+        "Energy Consume": "0.57",
+        "SeedPrice": "3",
+        "SellPrice": "8"
+    },
+    {
+        "Name": "Grumpkin",
+        "Level": "8",
+        "Exp": "11.6",
+        "GrowTime": "03:00:00",
+        "EnergyCost": "-5.5",
+        "Energy Consume": "1.27",
+        "SeedPrice": "9",
+        "SellPrice": "19"
+    },
+    {
+        "Name": "Watermint",
+        "Level": "11",
+        "Exp": "14",
+        "GrowTime": "04:00:00",
+        "EnergyCost": "-6.5",
+        "Energy Consume": "1.76",
+        "SeedPrice": "12",
+        "SellPrice": "24"
+    },
+    {
+        "Name": "Scarrot",
+        "Level": "15",
+        "Exp": "14.6",
+        "GrowTime": "06:00:00",
+        "EnergyCost": "-6.5",
+        "Energy Consume": "1.76",
+        "SeedPrice": "15",
+        "SellPrice": "26"
+    },
+    {
+        "Name": "Astracactus",
+        "Level": "21",
+        "Exp": "20",
+        "GrowTime": "07:00:00",
+        "EnergyCost": "-10",
+        "Energy Consume": "2.56",
+        "SeedPrice": "18",
+        "SellPrice": "35"
+    },
+    {
+        "Name": "Hotato",
+        "Level": "25",
+        "Exp": "5",
+        "GrowTime": "05:00:00",
+        "EnergyCost": "-9",
+        "Energy Consume": "2.48",
+        "SeedPrice": "0",
+        "SellPrice": "0"
+    },
+    {
+        "Name": "Muckchuck",
+        "Level": "32",
+        "Exp": "4",
+        "GrowTime": "01:00:00",
+        "EnergyCost": "-7",
+        "Energy Consume": "3.50",
+        "SeedPrice": "36",
+        "SellPrice": "49"
+    }
+]

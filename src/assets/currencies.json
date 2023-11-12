@@ -1,0 +1,12 @@
+[
+  {
+    "id": "usd",
+    "symbol": "$",
+    "label": "USD"
+  },
+  {
+    "id": "php",
+    "symbol": "₱",
+    "label": "PHP"
+  }
+]
