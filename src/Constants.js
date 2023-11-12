@@ -23,5 +23,6 @@ Constants.TOTAL_ENERGY_PER_DAY = Constants.ENERGY_SOURCE.reduce(
 );
 
 Constants.PUBLISHER_ID = "5967343193917527";
+Constants.RONIN_ADDRESS = "ronin:cf7c815a9e121d48a09d9675810db675fb0b473f";
 
 export default Constants;

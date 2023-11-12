@@ -4,3 +4,21 @@ body {
   background-color: black;
   color: white;
 }
+
+/* .hide-on-mobile implementation */
+
+
+.hide-on-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .hide-on-mobile {
+    display: block;
+  }
+
+  /* implementation for table cell of hide-on-mobile */
+  td.hide-on-mobile, th.hide-on-mobile {
+    display: table-cell;
+  }
+}

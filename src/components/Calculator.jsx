@@ -6,12 +6,13 @@ import {
   Typography,
   Tooltip,
   IconButton,
+  Chip,
 } from "@mui/joy";
 import React, { useEffect, useState } from "react";
 import crops from "../assets/crops.json";
 import Constants from "../Constants";
 import Table from "@mui/joy/Table";
-import { Star } from "@mui/icons-material";
+import { Coffee, CopyAll, Star } from "@mui/icons-material";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import axios from "axios";
 import currencies from "../assets/currencies.json";
@@ -97,7 +98,7 @@ function Calculator() {
       currency,
       currencies,
       currencyId,
-      activeCurrency
+      activeCurrency,
     });
     if (currencyId) {
       //analyze all crops and set the data
@@ -123,18 +124,31 @@ function Calculator() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: {
+            xs: "column",
+            sm: "row",
+          },
           justifyContent: "space-between",
         }}
       >
         <Typography level="h1" color="white">
           {" "}
-          Pixels Analysis by Jissi.ron{" "}
+          Pixels Analysis by{" "}
+          <span
+            style={{
+              color: "gold",
+            }}
+          >
+            Jissi.ron
+          </span>{" "}
         </Typography>{" "}
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: {
+              xs: "column",
+              sm: "row",
+            },
             alignItems: "center",
           }}
         >
@@ -171,17 +185,15 @@ function Calculator() {
             }}
           >
             $BERRY Price
+            <Typography
+              sx={{
+                ml: 1,
+                color: "gold",
+              }}
+            >
+              {berryPrice}
+            </Typography>
           </Typography>
-          <Input
-            sx={{
-              ml: 1,
-            }}
-            onChange={(e) => {
-              setBerryPrice(e.target.value);
-            }}
-            placeholder="Berry Price"
-            value={berryPrice}
-          />
           <Select
             sx={{
               ml: 1,
@@ -195,7 +207,7 @@ function Calculator() {
               setCurrency(newValue);
             }}
             value={currency}
-            defaultValue="php" 
+            defaultValue="php"
           >
             {currencies.map((currency) => (
               <Option selected={currency.id === "PHP"} value={currency.id}>
@@ -205,7 +217,7 @@ function Calculator() {
           </Select>
         </Box>
       </Box>
-      <Typography level="h5" sx={{ color: "gold" }}>
+      <Typography sx={{ color: "gold" }}>
         Based on daily energy which includes VIP, SAUNA/POOL, and normal
         regeneration which is total of {Constants.TOTAL_ENERGY_PER_DAY} for VIP
         and{" "}
@@ -214,7 +226,46 @@ function Calculator() {
         calculations)
       </Typography>
 
-      <Box>
+      <Typography sx={{ color: "orange", my: 3 }}>
+        {" "}
+        If you want to support my work, please buy me coffee by donating
+        $RON/$BERRY to this address:{" "}
+        <Tooltip title="Click to copy">
+          <Chip
+            sx={{
+              backgroundColor: "#222",
+              maxWidth: "100%",
+              overflow: "hidden",
+            }}
+          >
+            <Typography
+              onClick={() => {
+                //copy to clipboard
+                navigator.clipboard.writeText(Constants.RONIN_ADDRESS);
+                alert("Copied to clipboard!");
+              }}
+              sx={{
+                cursor: "pointer",
+                color: "gold",
+                //force fit text to sceen
+                maxWidth: "100%",
+                overflow: "hidden",
+              }}
+              startDecorator={<CopyAll />}
+            >
+              {Constants.RONIN_ADDRESS}
+            </Typography>{" "}
+          </Chip>
+        </Tooltip>
+      </Typography>
+      <Box
+        sx={{
+          py: {
+            xs: 25, //space for ads
+            sm: 0,
+          },
+        }}
+      >
         <Table
           aria-label="basic table"
           sx={{
@@ -242,13 +293,48 @@ function Calculator() {
                 backgroundColor: "red",
               }}
             >
-              <th style={{ width: "10%" }}>Crop</th>
-              <th>Energy/Crop</th>
-              <th>Profit/crop</th>
-              <th>Plant/day</th>
-              <th style={{ width: "15%" }}>Total Profit/day</th>
-              <th style={{ width: "18%" }}>Total Profit/mo</th>
-              <th style={{ width: "20%" }}>Total Profit/yr</th>
+              <th
+                style={{
+                  width: {
+                    xs: "20%",
+                    sm: "10%",
+                  },
+                }}
+              >
+                <Tooltip title="Crop name">
+                  <Typography>🌰</Typography>
+                </Tooltip>
+              </th>
+              <th className="hide-on-mobile">
+                <Tooltip title="Energy consumed per crop">
+                  <Typography>⚡/🌰</Typography>
+                </Tooltip>
+              </th>
+              <th className="hide-on-mobile">
+                <Tooltip title="Profit per crop">
+                  <Typography>💵/🌰</Typography>
+                </Tooltip>
+              </th>
+              <th className="hide-on-mobile">
+                <Tooltip title="Plantable per day, not including energy consumables">
+                  <Typography>🌰/d</Typography>
+                </Tooltip>
+              </th>
+              <th style={{ width: "15%" }}>
+                <Tooltip title="Profit per day">
+                  <Typography>💵/d</Typography>
+                </Tooltip>
+              </th>
+              <th style={{ width: "18%" }}>
+                <Tooltip title="Profit per month">
+                  <Typography>💵/m</Typography>
+                </Tooltip>
+              </th>
+              <th style={{ width: "20%" }}>
+                <Tooltip title="Profit per year">
+                  <Typography>💵/y</Typography>
+                </Tooltip>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -256,10 +342,14 @@ function Calculator() {
               //loop through the data and create a row for each crop
               data?.map((crop) => (
                 <tr>
-                  <td>{crop.Name}</td>
-                  <td>{crop.Data?.totalEnergyPerCrop}</td>
-                  <td>{crop.Data?.profitPerCrop}</td>
                   <td>
+                    <Typography sx={{ color: "gold" }}>{crop.Name}</Typography>
+                  </td>
+                  <td className="hide-on-mobile">
+                    {crop.Data?.totalEnergyPerCrop}
+                  </td>
+                  <td className="hide-on-mobile">{crop.Data?.profitPerCrop}</td>
+                  <td className="hide-on-mobile">
                     <Typography>
                       {vipOn
                         ? `${crop.Data?.plantablePerDay}`
