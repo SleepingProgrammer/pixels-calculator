@@ -8,5 +8,25 @@
     "id": "php",
     "symbol": "₱",
     "label": "PHP"
+  },
+  {
+    "id": "vnd",
+    "symbol": "₱",
+    "label": "VND"
+  },
+  {
+    "id": "krw",
+    "symbol": "₱",
+    "label": "KRW"
+  },
+  {
+    "id": "jpy",
+    "symbol": "₱",
+    "label": "JPY"
+  },
+  {
+    "id": "cny",
+    "symbol": "₱",
+    "label": "CNY"
   }
 ]
